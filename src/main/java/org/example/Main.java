@@ -1,13 +1,34 @@
 package org.example;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
+        LinkedList<String> linkedList = new LinkedList<>();
+        linkedList.add("First");
+        linkedList.add("Second");
+        linkedList.add("Third");
+//        linkedList.add(4, "Fourth");
+        System.out.println(linkedList);
+        HashSet<String> hashSet = new HashSet<>();
+        hashSet.add("Hello");
+        hashSet.add("World");
+        System.out.println(hashSet.contains("Hell"));
+
+
+        Stack<Integer> stack = new Stack<>();
+        stack.push(10);
+        stack.push(20);
+        stack.pop();
+        stack.peek();
+
+
+        Queue<Integer> queue = new LinkedList<>();
+        queue.add(10);
+        queue.add(20);
+        queue.poll();
 
     }
 }
