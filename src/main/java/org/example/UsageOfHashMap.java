@@ -18,5 +18,10 @@ public class UsageOfHashMap {
             System.out.println(entry.getKey());
             System.out.println(entry.getValue());
         }
+
+        hashMap.forEach( (key, val) -> {
+            System.out.println(key);
+            System.out.println(val);
+        });
     }
 }
