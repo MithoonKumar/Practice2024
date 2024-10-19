@@ -6,42 +6,67 @@ import java.util.*;
 public class AnotherExperimentClass {
 
     public static void main(String[] args) {
-//        int[] arr = {0,1,0,3,12};
-//        moveZeroes(arr);
-//        for (int i=0; i<arr.length; i++) {
-//            System.out.println(arr[i]);
-//        }
-
-        LinkedHashMap<Integer, Integer> linkedHashMap = new LinkedHashMap<>();
-        linkedHashMap.put(1, 1);
-        linkedHashMap.put(2, 2);
-        linkedHashMap.put(3, 3);
-        System.out.println(linkedHashMap);
-        linkedHashMap.pollFirstEntry();
-        System.out.println(linkedHashMap);
-    }
-
-    private static void swapNums(int index1, int index2, int[] nums) {
-        int temp = nums[index1];
-        nums[index1] = nums[index2];
-        nums[index2] = temp;
+        System.out.println(longestDiverseString(7, 1, 0));
     }
 
 
-    public static void moveZeroes(int[] nums) {
-        TreeSet<Integer> treeSet = new TreeSet<>();
-        for (int i=0; i<nums.length; i++) {
-            if (nums[i] == 0) {
-                treeSet.add(i);
+    public static int findLargestChar(int [] arr) {
+        int index = -1;
+        int val = 0;
+        for (int i=0; i<arr.length; i++) {
+            if (val < arr[i]) {
+                val = arr[i];
+                index = i;
+            }
+        }
+        return index;
+    }
+
+    public static int findNextGreaterChar(int[] arr, int index) {
+        int val = 0;
+        int newIndex = -1;
+
+        for (int i=0; i<arr.length; i++) {
+            if (i == index) {
                 continue;
             }
-            if (nums[i] != 0 && treeSet.isEmpty()) {
-                continue;
+            if (arr[i] > val) {
+                newIndex = i;
+                val = arr[i];
             }
-            int top = treeSet.first();
-            treeSet.removeFirst();
-            treeSet.add(i);
-            swapNums(top, i, nums);
+        }
+        return newIndex;
+    }
+
+    public static String longestDiverseString(int a, int b, int c) {
+        int[] arr = {a, b, c};
+
+        StringBuilder sb = new StringBuilder("");
+        while(true) {
+            int largestChar = findLargestChar(arr);
+            if (largestChar == -1) {
+                return sb.toString();
+            } else {
+                int len = sb.length();
+                if ( len >= 2) {
+                    if (sb.charAt(len-1)-'a' == largestChar && sb.charAt(len-2)-'a' == largestChar) {
+                        int nextChar = findNextGreaterChar(arr, largestChar);
+                        if (nextChar == -1) {
+                            return sb.toString();
+                        } else {
+                            sb.append('a' + nextChar);
+                            arr[nextChar]--;
+                        }
+                    }
+                } else {
+                    sb.append('a' + largestChar);
+                    arr[largestChar]--;
+                }
+            }
+
+
         }
     }
+
+
 }
