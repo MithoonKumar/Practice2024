@@ -18,5 +18,7 @@ public class UsageOfHashSet {
         System.out.println(hashSet.contains("Fifth"));
 
         hashSet.forEach(System.out::println);
+
+        hashSet.forEach(System.out::println);
     }
 }
