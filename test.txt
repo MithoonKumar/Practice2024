@@ -1,0 +1,17 @@
+LogMessage{message='Hi! This is a sample error logging', timeStamp=1729325509056, logLevel=ERROR}
+LogMessage{message='Hi! This is a sample info logging', timeStamp=1729325536350, logLevel=DEBUG}
+LogMessage{message='Hi! This is a sample error logging', timeStamp=1729325536361, logLevel=ERROR}
+LogMessage{message='Hi! This is a sample debug logging', timeStamp=1729325543846, logLevel=DEBUG}
+LogMessage{message='Hi! This is a sample error logging', timeStamp=1729325543856, logLevel=ERROR}
+LogMessage{message='Hi! This is a sample debug logging', timeStamp=1729325563516, logLevel=DEBUG}
+LogMessage{message='Hi! This is a sample error logging', timeStamp=1729325568142, logLevel=ERROR}
+LogMessage{message='Hi! This is a sample debug logging', timeStamp=1729325768585, logLevel=DEBUG}
+LogMessage{message='Hi! This is a sample error logging', timeStamp=1729325768596, logLevel=ERROR}
+LogMessage{message='Hi! This is a sample debug logging', timeStamp=1729325784120, logLevel=DEBUG}
+LogMessage{message='Hi! This is a sample error logging', timeStamp=1729325784129, logLevel=ERROR}
+LogMessage{message='Hi! This is a sample debug logging', timeStamp=1729325815998, logLevel=DEBUG}
+LogMessage{message='Hi! This is a sample error logging', timeStamp=1729325816008, logLevel=ERROR}
+LogMessage{message='Hi! This is a sample debug logging', timeStamp=1729325870045, logLevel=DEBUG}
+LogMessage{message='Hi! This is a sample error logging', timeStamp=1729325870053, logLevel=ERROR}
+LogMessage{message='Hi! This is a sample debug logging', timeStamp=1729325990532, logLevel=DEBUG}
+LogMessage{message='Hi! This is a sample error logging', timeStamp=1729325990542, logLevel=ERROR}
