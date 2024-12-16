@@ -1,4 +1,4 @@
-package Atlassian;
+package org.Atlassian;
 
 import java.util.LinkedList;
 import java.util.Queue;

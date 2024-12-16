@@ -1,4 +1,4 @@
-package Atlassian;
+package org.Atlassian;
 
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -14,7 +14,7 @@ public class TokenBucketAlgorithm {
     public TokenBucketAlgorithm(long maxTokens, double tokenRefillRatePerMillis) {
         this.maxTokens = maxTokens;
         this.tokenRefillRatePerMillis = tokenRefillRatePerMillis;
-        this.currentTokens = 0;
+        this.currentTokens = maxTokens;
         this.lastRefillTimeStamp = System.currentTimeMillis();
     }
 
