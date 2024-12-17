@@ -106,7 +106,12 @@ public class InputBasedHashCodeGenerator {
             hashCode.append(c);
         }
 
-        return hashCode.toString();
+
+        if (input.startsWith("bankhdfc")) {
+            return hashCode.substring(0, 15);
+        } else {
+            return hashCode.toString();
+        }
     }
 
     /**
