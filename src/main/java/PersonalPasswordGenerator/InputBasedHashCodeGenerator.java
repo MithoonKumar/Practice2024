@@ -14,6 +14,7 @@ public class InputBasedHashCodeGenerator {
     private static final String LOWERCASE = "abcdefghijklmnopqrstuvwxyz";
     private static final String DIGITS = "0123456789";
     private static final String SPECIAL_CHARACTERS = "!@#$%^&*()-_=+[]{}|;:',.<>?/`~";
+    private static final String BANK_SPECIAL_CHARACTERS = "$#^@&%_~!*-";
 
     /**
      * Generates a deterministic hashcode based on the input string.
@@ -52,8 +53,15 @@ public class InputBasedHashCodeGenerator {
             digitIndex += 1;
 
             // Special Characters
-            hashCodeChars.add(SPECIAL_CHARACTERS.charAt(Byte.toUnsignedInt(hashBytes[specialIndex % hashBytes.length]) % SPECIAL_CHARACTERS.length()));
-            specialIndex += 1;
+            if (input.startsWith("bankicici")) {
+                hashCodeChars.add(BANK_SPECIAL_CHARACTERS.charAt(Byte.toUnsignedInt(hashBytes[specialIndex % hashBytes.length]) % BANK_SPECIAL_CHARACTERS.length()));
+                specialIndex += 1;
+            } else {
+                hashCodeChars.add(SPECIAL_CHARACTERS.charAt(Byte.toUnsignedInt(hashBytes[specialIndex % hashBytes.length]) % SPECIAL_CHARACTERS.length()));
+                specialIndex += 1;
+            }
+
+
         }
 
         // Optionally, add more characters to reach a desired length
@@ -76,7 +84,11 @@ public class InputBasedHashCodeGenerator {
                     break;
                 case 3:
                 default:
-                    nextChar = SPECIAL_CHARACTERS.charAt(Byte.toUnsignedInt(hashBytes[byteIndex % hashBytes.length]) % SPECIAL_CHARACTERS.length());
+                    if (input.startsWith("bankicici")) {
+                        nextChar = BANK_SPECIAL_CHARACTERS.charAt(Byte.toUnsignedInt(hashBytes[byteIndex % hashBytes.length]) % BANK_SPECIAL_CHARACTERS.length());
+                    } else {
+                        nextChar = SPECIAL_CHARACTERS.charAt(Byte.toUnsignedInt(hashBytes[byteIndex % hashBytes.length]) % SPECIAL_CHARACTERS.length());
+                    }
                     break;
             }
             hashCodeChars.add(nextChar);
@@ -131,9 +143,10 @@ public class InputBasedHashCodeGenerator {
                 "instagram",
                 "twitter",
                 "gmail",
-                "icici",
-                "kotak",
-                "hdfc",
+                "linkedin",
+                "bankicici",
+                "bankkotak",
+                "bankhdfc",
                 "irctc"
         };
 
